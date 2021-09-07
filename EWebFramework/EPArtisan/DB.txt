@@ -1,0 +1,8 @@
+﻿
+CREATE TABLE ArtisanLogTable (
+  [ID]                [INT] IDENTITY (1, 1) NOT NULL,
+  Comments        varchar(max)  NULL,
+  CONSTRAINT [pk_ArtisanLogTable] PRIMARY KEY (ID)
+)
+
+GO;

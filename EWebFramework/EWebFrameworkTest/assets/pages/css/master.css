@@ -1,0 +1,215 @@
+
+/**
+    Force jquery bootstrap validation of select2
+ */
+div.error .select2-selection {
+    border: 1px solid #FF4961!important;
+    border-radius: 4px;
+    color: #FF4961!important;
+}
+
+/**
+    FIXED select2 not occupying full height on append
+ */
+.select2-selection.select2-selection--single{
+    /*height: 100%!important*/
+}
+.select2-container{
+    /*height: 100%!important*/
+    /*THIS IS CAUSING PROBLEM WITH SCROLLING PAGE*/
+}
+
+.select2.select2-container.select2-container--default {
+    width: 100% !important;
+}
+
+
+    /**
+        Make date-picker look like readonly
+     */
+[data-format="date-picker"], [data-format="date-picker"]:active, [data-format="date-picker"]:focus{
+    background-color: #e8e8e8;
+}
+
+
+
+
+/*
+    -- Custom currencies--
+    -- Currently not expandable. Just plain text Instead increase font size
+    https://html-css-js.com/html/character-codes/currency/
+*/
+.la-naira:before { content: "₦" }
+/* ------------------------------------------------------*/
+
+
+
+
+
+/**
+    -- FIX Multiple Modal Overflow going to hidden
+ */
+/*.modal {*/
+    /*overflow-y:auto!important;*/
+/*}*/
+
+
+
+/*
+    --
+    -- OVERRIDE TABLE ROW SELECTED DESIGN
+    --
+ */
+
+table.dataTable tbody>tr.selected, table.dataTable tbody>tr>.selected{
+    background-color: aliceblue!important;
+    color: black!important;
+}
+
+/* REMOVE THE AUTO PADDING ON DATATABLES*/
+/*.px-0-force{*/
+    /*padding-left: 0px!important;*/
+    /*padding-right: 0px!important;*/
+/*}*/
+
+
+
+/**
+    For xtra small image display
+ */
+.xsImageThumbnail{
+    max-width: fit-content !important;
+    min-width: 50px!important;
+
+}
+
+
+/*Instead created padding 20px*/
+.padded-card{
+    padding: 20px;
+}
+
+
+
+
+/*FORCE NAME TO SHOW ALWAYS*/
+/*@media (max-width: 1199.98px)*/
+/*{*/
+    /*.header-navbar .navbar-container ul.nav li .selected-language, .header-navbar .navbar-container ul.nav li a.dropdown-user-link .user-name {*/
+        /*display: inline-block!important;*/
+    /*}*/
+/*}*/
+
+
+
+
+
+
+
+
+/*!
+------------------------------------------
+      PRINTING MODULE
+------------------------------------------
+   */
+@media print {
+    body * {
+        visibility: hidden;
+    }
+    .printable-section, .printable-section * {
+        visibility: visible;
+    }
+    .printable-section {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    button, .header-navbar, .main-menu, .no-print{
+        display: none!important;
+        visibility: hidden!important;
+    }
+    .app-content{margin: 0px!important;}
+    body{
+        padding: 0px!important;
+    }
+
+
+}
+
+
+
+
+
+
+/*!
+------------------------------------------
+      Calendar Events Classes
+------------------------------------------
+*/
+
+.CE-SessionStart{
+    background-color: #ED5564!important;
+    border-color: lightgrey !important;
+
+}
+.CE-SessionEnd{
+    background-color: #F8B195!important;
+    border-color: lightgrey !important;
+
+}
+.CE-TermStart{
+    background-color: #355C7D!important;
+    border-color: lightgrey !important;
+
+}
+.CE-TermEnd{
+    background-color: #547A8B!important;
+    border-color: lightgrey !important;
+
+}
+.CE-Party{
+    background-color: #FB6E52!important;
+    border-color: lightgrey !important;
+
+}
+.CE-Sports{
+    background-color: #6C5B7B!important;
+    border-color: lightgrey !important;
+}
+.CE-Holiday{
+    background-color: #37BC9B!important;
+    border-color: lightgrey !important;
+
+}
+
+
+
+/*ADJUST THE HEADING ELEMENT BUTTON WHEN SCREEN IS SMALL*/
+@media only screen and (max-width: 700px), screen and (max-device-width: 700px) {
+    .heading-elements{
+        position: relative!important;
+        text-align: left!important;
+        padding-left: 20px!important;
+
+    }
+    .heading-elements ul {
+        padding-left: 0px!important;
+    }
+}
+
+/* ONLY PERFORMS ON BIG SCREENS*/
+@media only screen and (min-width: 700px), screen and (min-device-width: 700px) {
+    .pull-right-big{
+        float: right;
+    }
+}
+
+
+
+
+
+/*IMPROVING BADGES*/
+.badge.badge-default{
+    background-color: rgba(9, 6, 10, 0.23)!important;
+    color: #0d030a!important;;
+}

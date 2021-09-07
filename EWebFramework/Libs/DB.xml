@@ -1,0 +1,756 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+DB
+</name>
+</assembly>
+<members>
+<member name="T:DB.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:DB.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:DB.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="T:DB.Abstracts.All__DBs">
+ <summary>
+ This is an abstract class for SQL Compliant Databases
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:DB.Abstracts.All__DBs.Logger">
+ <summary>
+ I make this Public so that user can redirect the logger
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="F:DB.Abstracts.All__DBs.SQL_UPGRADE_FILES_LOCATION">
+ <summary>
+ 0 = Path [C:\], 1= VersionNumber: in Integers [1,2,3,4,5]
+ </summary>
+ <remarks>REM   "{0}\DBUpgrades\SQL_Upgrade_{1}.sql"</remarks>
+</member>
+<member name="T:DB.Abstracts.All__DBs.DBConnectionState">
+ <summary>
+ Defines Database ConnectionState
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:DB.Abstracts.All__DBs.GETNewID(System.String,System.String)">
+ <summary>
+ Get the next Auto ID for the table provided using the unique column IDHolderColumn
+ </summary>
+ <param name="TableName">The name of the table</param>
+ <param name="IDHolderColumn">A numeric column, preferrable a long</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DB.Abstracts.All__DBs.IsDataSetValid(System.Data.DataSet)">
+ <summary>
+ Return yes ONLY IF dataset contains any row.
+ </summary>
+ <param name="ds">Dataset to evaluate</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DB.Abstracts.All__DBs.IsDataSetValid(System.Collections.Generic.IEnumerable{System.Data.DataRow})">
+ <summary>
+ Return yes ONLY IF dataset contains any row.
+ </summary>
+ <param name="ds">Dataset to evaluate</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DB.Abstracts.All__DBs.AreTableEqual(System.Data.DataTable,System.Data.DataTable)">
+ <summary>
+ Checks if two tables are absolutely equal
+ </summary>
+ <param name="Table1"></param>
+ <param name="Table2"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DB.Abstracts.All__DBs.PrepareStringForDatabaseInsertOrUpdate(System.String)">
+ <summary>
+ Since All SQL has issues with apostrophe(') in a string, we will correct that before inserting or updating
+ </summary>
+ <param name="strString">The string to Lock on Apostrophe</param>
+ <returns></returns>
+ <remarks>NOTE: Target Should be the string in the parameters not the syntax like a='{0}' should already be done</remarks>
+</member>
+<member name="M:DB.Abstracts.All__DBs.ConversionDB`1.ConvertColumnValuesToArray(System.Data.DataRowCollection,System.Int16)">
+ <summary>
+ Returns All the Values in the specified Column as One Dimensional Array
+ </summary>
+ <param name="DataSetRows">Rows Contain the values</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DB.Abstracts.All__DBs.ConvertColumnValuesToString(System.Data.DataRowCollection,System.Int16,System.String)">
+ <summary>
+ Convert a whole column to String
+ </summary>
+ <param name="DataSetRows"></param>
+ <param name="ColIndex"></param>
+ <param name="Delimiter"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DB.Abstracts.All__DBs.GetSQLDateTimeFormat(EPRO.Library.Types.NullableDateTime)">
+ <summary>
+ Gets A Formatted DateTime... NB: It is already packed like '{0}'
+ </summary>
+ <param name="_DateTime"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DB.Abstracts.All__DBs.GetSQLDateFormat(EPRO.Library.Types.NullableDateTime)">
+ <summary>
+ Returns Date Format [07/22/2013]. NB: It is already packed like '{0}'
+ </summary>
+ <param name="_Date"></param>
+ <returns></returns>
+ <remarks>NB: It is already packed</remarks>
+</member>
+<member name="M:DB.Abstracts.All__DBs.GetSQLTimeFormat(EPRO.Library.Types.NullableDateTime)">
+ <summary>
+ Returns Time Format [01:45:58 AM]. NB: It is already packed like '{0}'
+ </summary>
+ <param name="_Time"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DB.Abstracts.All__DBs.PingDB">
+ <summary>
+ Test if DB is ok. Must always be silent check or default if no silent.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:DB.Abstracts.All__DBs.CanConnect">
+ <summary>
+ Indicate if Connection will be successful using the current parameters
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DB.Abstracts.All__DBs.ExecuteSQLFile(System.String,System.Boolean,System.String)">
+ <summary>
+ Executes an SQL File containing SQL Statements
+ </summary>
+ <param name="SQLFileName">SQL File containing SQL Statements</param>
+ <param name="TerminateOnError">If One Statement in the file yields error. The process will break if set to true</param>
+ <param name="StatementDelimiter">The delimiter use to identify the end of each sql statement. not case sensitive</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DB.Abstracts.All__DBs.dbExec(System.String)">
+ <summary>
+ execute()
+ </summary>
+ <param name="SQL"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DB.Abstracts.All__DBs.dbExec(System.String,System.Boolean)">
+ <summary>
+ Makes sure the apostrophe issue is corrected in the strings. 
+ NB: For your original SQL Query you should use \' for apostrophe
+ </summary>
+ <param name="SQL">Name=\'Fred's Computer\'</param>
+ <param name="Address_Apostrophe_Issue">Confirmed this is encoded SQL String</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DB.Abstracts.All__DBs.getHandledSQLApostrophe__Issue(System.String)">
+ <summary>
+ If you used this [  "\'" ] in your SQL statement. it will help you address the ' to double and return back the SQL ready for insert
+ </summary>
+ <param name="pSQL"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DB.Abstracts.All__DBs.getRS(System.String)">
+ <summary>
+ executeQuery()
+ </summary>
+ <param name="SQL"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DB.Abstracts.All__DBs.getRS(System.String,System.Boolean)">
+ <summary>
+ Makes sure the apostrophe issue is corrected in the strings. 
+ NB: For your original SQL Query you should use \' for apostrophe
+ </summary>
+ <param name="SQL">Name=\'Fred's Computer\'</param>
+ <param name="Address_Apostrophe_Issue">Confirmed this is encoded SQL String</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DB.Abstracts.All__DBs.FillMyTable(System.Data.DataTable@)">
+ <summary>
+ Fill All Data For Table
+ </summary>
+ <param name="OneTable"></param>
+ <remarks></remarks>
+</member>
+<member name="M:DB.Abstracts.All__DBs.FillMyTable(System.String,System.Data.DataTable@)">
+ <summary>
+ Fill All Data For Table
+ </summary>
+ <param name="OneTable"></param>
+ <remarks></remarks>
+</member>
+<member name="M:DB.Abstracts.All__DBs.FillMyTables(System.Data.DataSet@)">
+ <summary>
+ Fill All Data For Tables in this Hard-Coded dataset
+ </summary>
+ <param name="MyDataSet"></param>
+ <remarks></remarks>
+</member>
+<member name="T:DB.Abstracts.Sample__Table">
+ <summary>
+ Copy this Template and adjust as you want. You can remove some of the constructors or add to it
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:DB.Abstracts.Sample__Table.#ctor(System.String)">
+ <summary>
+ UNKNOWN ACCESS
+ </summary>
+ <param name="TableName"></param>
+ <remarks></remarks>
+</member>
+<member name="M:DB.Abstracts.Sample__Table.#ctor(DB.Abstracts.All__DBs@,System.String)">
+ <summary>
+ FULL ACCESS. This will load data with dbconn
+ </summary>
+ <param name="DBConn"></param>
+ <param name="TableName"></param>
+ <remarks></remarks>
+</member>
+<member name="M:DB.Abstracts.Sample__Table.#ctor(DB.Abstracts.All__DBs@,System.String,System.Int64)">
+ <summary>
+ Full Access. This will load data with dbconn
+ </summary>
+ <param name="DBConn"></param>
+ <param name="pTableName"></param>
+ <param name="pTargettedRowID">Only works if the table contains a column named ID</param>
+ <remarks></remarks>
+</member>
+<member name="M:DB.Abstracts.Sample__Table.#ctor(DB.Abstracts.All__DBs@,System.String,System.String)">
+ <summary>
+ Full Access. This will load data with dbconn
+ </summary>
+ <param name="pDBConn"></param>
+ <param name="pTableName"></param>
+ <param name="pSQL">Load table with your own SQL</param>
+ <remarks></remarks>
+</member>
+<member name="M:DB.Abstracts.Sample__Table.#ctor(DB.Abstracts.All__DBs@,System.String,System.String,System.Int64)">
+ <summary>
+ Full Access. This will load data with dbconn
+ </summary>
+ <param name="pDBConn"></param>
+ <param name="pTableName"></param>
+ <param name="pTargettedRowID"></param>
+ <param name="pSQL">Load table with your own SQL</param>
+ <remarks></remarks>
+</member>
+<member name="M:DB.Abstracts.Sample__Table.#ctor(System.Data.DataRowCollection,System.Int64,System.String,DB.Abstracts.All__DBs@)">
+ <summary>
+ Partial Access
+ </summary>
+ <param name="pDBConn"></param>
+ <param name="pTableRows"></param>
+ <param name="pTargettedRowID"></param>
+ <remarks></remarks>
+</member>
+<member name="M:DB.Abstracts.Sample__Table.#ctor(System.Collections.Generic.IEnumerable{System.Data.DataRow},System.Int64,System.String,DB.Abstracts.All__DBs@)">
+ <summary>
+ Partial Access
+ </summary>
+ <param name="pDBConn"></param>
+ <param name="pTableRows"></param>
+ <param name="pTargettedRowID"></param>
+ <remarks></remarks>
+</member>
+<member name="M:DB.Abstracts.Sample__Table.#ctor(System.Data.DataTable,System.Int32,System.String,DB.Abstracts.All__DBs@)">
+ <summary>
+ Partial Access
+ </summary>
+ <param name="DBConn"></param>
+ <param name="FullTable"></param>
+ <param name="TargettedRowID"></param>
+ <remarks></remarks>
+</member>
+<member name="M:DB.Abstracts.Sample__Table.#ctor(System.Data.DataRow)">
+ <summary>
+ Shallow Access
+ </summary>
+ <param name="TargettedRow"></param>
+ <remarks>Assuming this Row has a Column Called ID and It will be assigned</remarks>
+</member>
+<member name="M:DB.Abstracts.Sample__Table.#ctor(System.Collections.Generic.IEnumerable{System.Data.DataRow})">
+ <summary>
+ Shallow Access
+ </summary>
+ <param name="pTableRows"></param>
+ <remarks>Assuming this Row has a Column Called ID and It will be assigned</remarks>
+</member>
+<member name="M:DB.Abstracts.Sample__Table.#ctor(System.Collections.Generic.IEnumerable{System.Data.DataRow},System.Int64)">
+ <summary>
+ Shallow Access
+ </summary>
+ <param name="pTableRows"></param>
+ <remarks>Assuming this Row has a Column Called ID and It will be assigned</remarks>
+</member>
+<member name="M:DB.Abstracts.Sample__Table.#ctor(System.Collections.Generic.IEnumerable{System.Data.DataRow},System.Int64,System.String)">
+ <summary>
+ Shallow Access
+ </summary>
+ <param name="pTableRows"></param>
+ <remarks>Assuming this Row has a Column Called ID and It will be assigned</remarks>
+</member>
+<member name="M:DB.Abstracts.Sample__Table.#ctor(System.Data.DataTable,System.String)">
+ <summary>
+ Shallow Access
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:DB.Abstracts.Sample__Table.#ctor(System.Data.DataTable,System.String,System.Int64)">
+ <summary>
+ Shallow Access
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:DB.Abstracts.Sample__Table.#ctor(System.Data.DataRowCollection,System.String)">
+ <summary>
+ Shallow Access
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:DB.Abstracts.Sample__Table.#ctor(System.Collections.Generic.IEnumerable{System.Data.DataRow},System.String)">
+ <summary>
+ Shallow Access
+ </summary>
+ <param name="pTableRows"></param>
+ <remarks>Assuming this Row has a Column Called ID and It will be assigned</remarks>
+</member>
+<member name="M:DB.Abstracts.Sample__Table.#ctor(System.Data.DataRow,System.String)">
+ <summary>
+ Shallow Access. Should always target this passed in
+ </summary>
+ <param name="pTargettedRow"></param>
+ <remarks>Assuming this Row has a Column Called ID and It will be assigned</remarks>
+</member>
+<member name="P:DB.Abstracts.Sample__Table.ID">
+ <summary>
+ Note: your table must have the column name ID for you to call this
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DB.Abstracts.Sample__Table.delete(System.Int64)">
+ <summary>
+ Deletes a row using an id. *Already functional. if DBConn is valid
+ </summary>
+ <param name="pID"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DB.Abstracts.Sample__Table.delete">
+ <summary>
+ Deletes a row using an id. *Already functional. Only if dbConn is Available
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DB.Abstracts.Sample__Table.GetNextID">
+ <summary>
+ gets net ID from the rows loaded using linq
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DB.Abstracts.Sample__Table.reloadClass(System.String)">
+ <summary>
+ Reloads class and retarget class
+ </summary>
+ <param name="SQL"></param>
+ <remarks></remarks>
+</member>
+<member name="T:DB.Abstracts.SimpleTablePlugIn">
+ <summary>
+ Simple Table with target row capability
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:DB.Abstracts.SimpleTablePlugIn.RecordAccessibility.FULL_ACCESS">
+ <summary>
+ Access table with SQL QUERIES and target record. reloadable with DBConn Valid
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:DB.Abstracts.SimpleTablePlugIn.RecordAccessibility.PARTIAL_ACCESS">
+ <summary>
+ Access table and target record via direct record (DataRow(s)). reloadable if dbConn is valid
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:DB.Abstracts.SimpleTablePlugIn.RecordAccessibility.SHALLOW_ACCESS">
+ <summary>
+ Access target record only. NOT reloadable. No DBConn
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:DB.Abstracts.SimpleTablePlugIn.RecordAccessibility.UNKNOWN">
+ <summary>
+ Signifies EMPTY UNDECIDED CLASS
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:DB.Abstracts.SimpleTablePlugIn.#ctor(System.String)">
+ <summary>
+ UNKNOWN ACCESS
+ </summary>
+ <param name="TableName"></param>
+ <remarks></remarks>
+</member>
+<member name="M:DB.Abstracts.SimpleTablePlugIn.#ctor(DB.Abstracts.All__DBs@,System.String)">
+ <summary>
+ FULL ACCESS. This will load data with dbconn
+ </summary>
+ <param name="DBConn"></param>
+ <param name="TableName"></param>
+ <remarks></remarks>
+</member>
+<member name="M:DB.Abstracts.SimpleTablePlugIn.#ctor(DB.Abstracts.All__DBs@,System.String,System.Int64)">
+ <summary>
+ Full Access. This will load data with dbconn
+ </summary>
+ <param name="DBConn"></param>
+ <param name="pTableName"></param>
+ <param name="pTargettedRowID">Only works if the table contains a column named ID</param>
+ <remarks></remarks>
+</member>
+<member name="M:DB.Abstracts.SimpleTablePlugIn.#ctor(DB.Abstracts.All__DBs@,System.String,System.String)">
+ <summary>
+ Full Access. This will load data with dbconn
+ </summary>
+ <param name="pDBConn"></param>
+ <param name="pTableName"></param>
+ <param name="pSQL">Load table with your own SQL</param>
+ <remarks></remarks>
+</member>
+<member name="M:DB.Abstracts.SimpleTablePlugIn.#ctor(DB.Abstracts.All__DBs@,System.String,System.String,System.Int64)">
+ <summary>
+ Full Access. This will load data with dbconn
+ </summary>
+ <param name="pDBConn"></param>
+ <param name="pTableName"></param>
+ <param name="pTargettedRowID"></param>
+ <param name="pSQL">Load table with your own SQL</param>
+ <remarks></remarks>
+</member>
+<member name="M:DB.Abstracts.SimpleTablePlugIn.#ctor(System.Data.DataRowCollection,System.Int64,System.String,DB.Abstracts.All__DBs@)">
+ <summary>
+ Partial Access
+ </summary>
+ <param name="pDBConn"></param>
+ <param name="pTableRows"></param>
+ <param name="pTargettedRowID"></param>
+ <remarks></remarks>
+</member>
+<member name="M:DB.Abstracts.SimpleTablePlugIn.#ctor(System.Collections.Generic.IEnumerable{System.Data.DataRow},System.Int64,System.String,DB.Abstracts.All__DBs@)">
+ <summary>
+ Partial Access
+ </summary>
+ <param name="pDBConn"></param>
+ <param name="pTableRows"></param>
+ <param name="pTargettedRowID"></param>
+ <remarks></remarks>
+</member>
+<member name="M:DB.Abstracts.SimpleTablePlugIn.#ctor(System.Data.DataTable,System.Int64,System.String,DB.Abstracts.All__DBs@)">
+ <summary>
+ Partial Access
+ </summary>
+ <param name="DBConn"></param>
+ <param name="FullTable"></param>
+ <param name="pTargettedRowID"></param>
+ <remarks></remarks>
+</member>
+<member name="M:DB.Abstracts.SimpleTablePlugIn.#ctor(System.Data.DataRow)">
+ <summary>
+ Shallow Access. Should always target this passed in
+ </summary>
+ <param name="TargettedRow"></param>
+ <remarks>Assuming this Row has a Column Called ID and It will be assigned</remarks>
+</member>
+<member name="M:DB.Abstracts.SimpleTablePlugIn.#ctor(System.Collections.Generic.IEnumerable{System.Data.DataRow})">
+ <summary>
+ Shallow Access
+ </summary>
+ <param name="pTableRows"></param>
+ <remarks>Assuming this Row has a Column Called ID and It will be assigned</remarks>
+</member>
+<member name="M:DB.Abstracts.SimpleTablePlugIn.#ctor(System.Collections.Generic.IEnumerable{System.Data.DataRow},System.Int64)">
+ <summary>
+ Shallow Access
+ </summary>
+ <param name="pTableRows"></param>
+ <remarks>Assuming this Row has a Column Called ID and It will be assigned</remarks>
+</member>
+<member name="M:DB.Abstracts.SimpleTablePlugIn.#ctor(System.Collections.Generic.IEnumerable{System.Data.DataRow},System.Int64,System.String)">
+ <summary>
+ Shallow Access
+ </summary>
+ <param name="pTableRows"></param>
+ <remarks>Assuming this Row has a Column Called ID and It will be assigned</remarks>
+</member>
+<member name="M:DB.Abstracts.SimpleTablePlugIn.#ctor(System.Data.DataTable,System.String)">
+ <summary>
+ Shallow Access
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:DB.Abstracts.SimpleTablePlugIn.#ctor(System.Data.DataTable,System.String,System.Int64)">
+ <summary>
+ Shallow Access
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:DB.Abstracts.SimpleTablePlugIn.#ctor(System.Data.DataRowCollection,System.String)">
+ <summary>
+ Shallow Access
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:DB.Abstracts.SimpleTablePlugIn.#ctor(System.Collections.Generic.IEnumerable{System.Data.DataRow},System.String)">
+ <summary>
+ Shallow Access
+ </summary>
+ <param name="pTableRows"></param>
+ <remarks>Assuming this Row has a Column Called ID and It will be assigned</remarks>
+</member>
+<member name="M:DB.Abstracts.SimpleTablePlugIn.#ctor(System.Data.DataRow,System.String)">
+ <summary>
+ Shallow Access. Should always target this passed in
+ </summary>
+ <param name="pTargettedRow"></param>
+ <remarks>Assuming this Row has a Column Called ID and It will be assigned</remarks>
+</member>
+<member name="F:DB.Abstracts.SimpleTablePlugIn._____DbConn">
+ <summary>
+ Database Connection
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:DB.Abstracts.SimpleTablePlugIn.hasNumericPrimaryKeyColumn">
+ <summary>
+ Only checks if numeric primary key column name is returned by this class not its physical presence in the current data rows
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:DB.Abstracts.SimpleTablePlugIn.isDBConnValid">
+ <summary>
+ it is reloadable if db con is valid
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DB.Abstracts.SimpleTablePlugIn.ClassData">
+ <summary>
+ It returns datarowcollection format of this table
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DB.Abstracts.SimpleTablePlugIn.RawTable">
+ <summary>
+ It should always contain data. if there is data at all
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="F:DB.Abstracts.SimpleTablePlugIn.TargettedRow_Cached">
+ <summary>
+ For Full Access and Partial. Only for caching selected row
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:DB.Abstracts.SimpleTablePlugIn.TargettedRow">
+ <summary>
+ Use this always to receive property
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DB.Abstracts.SimpleTablePlugIn.AllRows">
+ <summary>
+ It always returns the enumerated table
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DB.Abstracts.SimpleTablePlugIn.LoadID(System.Int64)">
+ <summary>
+ Select from the pool of rows loaded the column with ID=pval
+ </summary>
+ <param name="pTargettedRowID"></param>
+ <remarks></remarks>
+</member>
+<member name="M:DB.Abstracts.SimpleTablePlugIn.isTableValid">
+ <summary>
+ Checks if the Table is valid. In other contains any rows
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DB.Abstracts.SimpleTablePlugIn.reloadClass_usingLast_Passed_SQL">
+ <summary>
+ Use this only if you have valid Connection
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:DB.Abstracts.SimpleTablePlugIn.reloadClass(System.String)">
+ <summary>
+ Reloads the class with your supplied SQL or else uses SELECT * FROM TABLE. Throws exception
+ </summary>
+ <param name="SQL">This sql is used to load the class if provided else it will select all from the table</param>
+ <remarks></remarks>
+</member>
+<member name="T:DB.Genric.RecordSet`1">
+ <summary>
+ Helps to Navigate a Record Set
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:DB.Genric.RecordSet`1.EOF">
+ <summary>
+ Indicate it has reach eof of record
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DB.Genric.RecordSet`1.BOF">
+ <summary>
+ Indicate Position is at -1 index
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DB.Genric.RecordSet`1.AbsoluteIndex">
+ <summary>
+ Displays the Absolute index of this current record. Like 1 of 4
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DB.Interfaces.IAll__DBs.PingDB">
+ <summary>
+ Test if DB is ok [Using Default/No Parameters]
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:DB.Interfaces.IAll__DBs.CanConnect">
+ <summary>
+ Indicate if Connection will be successful using the current parameters
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DB.Interfaces.IAll__DBs.dbExec(System.String)">
+ <summary>
+ execute()
+ </summary>
+ <param name="SQL"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DB.Interfaces.IAll__DBs.getRS(System.String)">
+ <summary>
+ executeQuery()
+ </summary>
+ <param name="SQL"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DB.Interfaces.IAll__DBs.ExecuteSQLFile(System.String,System.Boolean,System.String)">
+ <summary>
+ Executes an SQL File containing SQL Statements
+ </summary>
+ <param name="SQLFileName">SQL File containing SQL Statements</param>
+ <param name="TerminateOnError">If One Statement in the file yields error. The process will break if set to true</param>
+ <param name="StatementDelimiter">The delimiter use to identify the end of each sql statement. not case sensitive</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DB.Modules.basExtensions.AsEnumerableDBTable``1(``0)">
+ <summary>
+ This will split this table rows into classes containing 1 row each. AT most
+ </summary>
+ <typeparam name="T"></typeparam>
+ <param name="pObj"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DB.Modules.basExtensions.getFirstRowIDASC``1(``0)">
+ <summary>
+ This return first row according to ID Asc
+ </summary>
+ <typeparam name="T"></typeparam>
+ <param name="pObj"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DB.Modules.basExtensions.getLastRowIDASC``1(``0)">
+ <summary>
+ This return last row according to ID Asc
+ </summary>
+ <typeparam name="T"></typeparam>
+ <param name="pObj"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DB.Modules.basExtensions.ExtractLastRow``1(``0)">
+ <summary>
+ This return last row if any row is availble
+ </summary>
+ <typeparam name="T"></typeparam>
+ <param name="pObj"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DB.Modules.basExtensions.ExtractFirstRow``1(``0)">
+ <summary>
+ returns first row if any
+ </summary>
+ <typeparam name="T"></typeparam>
+ <param name="pObj"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+</members>
+</doc>

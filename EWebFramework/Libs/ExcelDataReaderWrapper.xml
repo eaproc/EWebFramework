@@ -1,0 +1,86 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+ExcelDataReaderWrapper
+</name>
+</assembly>
+<members>
+<member name="T:ExcelDataReaderWrapper.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:ExcelDataReaderWrapper.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:ExcelDataReaderWrapper.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="T:ExcelDataReaderWrapper.ExcelDB">
+ <summary>
+ Use to access excel 97-2003 and xlsx. 
+ Problem realized with this is it reads inconsistent cells
+ </summary>
+ <remarks>if HDR is false and first rows contains field names. 
+ if IMEX is false first row will be ignored, 
+ it will be set as column names. 
+ if IMEX is true first row will be added and all will be string. ColumnNames will be F1,F2 ...
+ </remarks>
+</member>
+<member name="P:ExcelDataReaderWrapper.ExcelDB.FilePath">
+ <summary>
+ The path to the excel file
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:ExcelDataReaderWrapper.ExcelDB.IMEX">
+ <summary>
+ IMEX=TRUE indicates read all columns as string. 
+ Note: this might affect writing back to the excel file but ok for readonly
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:ExcelDataReaderWrapper.ExcelDB.HDR">
+ <summary>
+ HDR=YES, indicates first row contains field names
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:ExcelDataReaderWrapper.ExcelDB.#ctor(System.String)">
+ <summary>
+ Use to access excel 97-2003. HDR=TRUE, IMEX=TRUE
+ </summary>
+ <param name="pExcelFileFullPath"></param>
+ <remarks></remarks>
+</member>
+<member name="M:ExcelDataReaderWrapper.ExcelDB.#ctor(System.String,System.Boolean,System.Boolean)">
+ <summary>
+  Use to access excel 97-2003
+ </summary>
+ <param name="pExcelFileFullPath">full path to excel file</param>
+ <param name="pHDR">HDR=YES, indicates first row contains field names</param>
+ <param name="pIMEX">DEPRECATED! NOT USED! :=> IMEX=TRUE indicates read all columns as string. 
+ Note: this might affect writing back to the excel file but ok for readonly</param>
+ <remarks></remarks>
+</member>
+<member name="M:ExcelDataReaderWrapper.ExcelDB.GetFirstSheet">
+ <summary>
+ Returns first sheet
+ </summary>
+ <returns>DataTable or Nothing if not found</returns>
+ <remarks></remarks>
+</member>
+</members>
+</doc>

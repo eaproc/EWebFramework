@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2050
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EWebFramework", "EWebFramework\EWebFramework.csproj", "{B34ACB3B-3089-428D-B3C6-1E4F503BFF4C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EWebFrameworkTest", "EWebFrameworkTest\EWebFrameworkTest.csproj", "{596752B2-0483-4227-90DE-EBC7E576DF3B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EWebFramework.Vendor", "EWebFramework.Vendor\EWebFramework.Vendor.csproj", "{F496B2ED-F862-4EBD-83D5-7ED86C16FA23}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EPArtisan", "EPArtisan\EPArtisan.csproj", "{95D2B410-AEEE-4CB8-AD49-17590B08C357}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseVersioning", "DatabaseVersioning\DatabaseVersioning.csproj", "{1A0980ED-70B2-44D5-88DC-AB0F73C66056}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ESiteBackup", "ESiteBackUp\ESiteBackup.csproj", "{19D63EDA-6F26-4A75-B495-6718BBA86E66}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B34ACB3B-3089-428D-B3C6-1E4F503BFF4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B34ACB3B-3089-428D-B3C6-1E4F503BFF4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B34ACB3B-3089-428D-B3C6-1E4F503BFF4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B34ACB3B-3089-428D-B3C6-1E4F503BFF4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{596752B2-0483-4227-90DE-EBC7E576DF3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{596752B2-0483-4227-90DE-EBC7E576DF3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{596752B2-0483-4227-90DE-EBC7E576DF3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{596752B2-0483-4227-90DE-EBC7E576DF3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F496B2ED-F862-4EBD-83D5-7ED86C16FA23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F496B2ED-F862-4EBD-83D5-7ED86C16FA23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F496B2ED-F862-4EBD-83D5-7ED86C16FA23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F496B2ED-F862-4EBD-83D5-7ED86C16FA23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95D2B410-AEEE-4CB8-AD49-17590B08C357}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95D2B410-AEEE-4CB8-AD49-17590B08C357}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95D2B410-AEEE-4CB8-AD49-17590B08C357}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95D2B410-AEEE-4CB8-AD49-17590B08C357}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A0980ED-70B2-44D5-88DC-AB0F73C66056}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A0980ED-70B2-44D5-88DC-AB0F73C66056}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A0980ED-70B2-44D5-88DC-AB0F73C66056}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A0980ED-70B2-44D5-88DC-AB0F73C66056}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19D63EDA-6F26-4A75-B495-6718BBA86E66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19D63EDA-6F26-4A75-B495-6718BBA86E66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19D63EDA-6F26-4A75-B495-6718BBA86E66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19D63EDA-6F26-4A75-B495-6718BBA86E66}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {64679420-0FD0-4236-9E2E-CE9F7032A579}
+	EndGlobalSection
+EndGlobal

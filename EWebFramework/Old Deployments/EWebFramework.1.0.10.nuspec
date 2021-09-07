@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>EWebFramework</id>
+    <version>1.0.10</version>
+    <title>EWebFramework</title>
+    <authors>Easy Processing Company</authors>
+    <owners>Easy Processing Company</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>http://eprocompany.com/</licenseUrl>
+    <projectUrl>http://eprocompany.com/</projectUrl>
+    <iconUrl>http://web.eprocompany.com/ec62a2_f00b50e394b34942b7556fbe7f364e07mv2.png</iconUrl>
+    <description>EAPROC Web Framework using .NET of website projects</description>
+    <releaseNotes>Added EWebFrameworkSiteBackup</releaseNotes>
+    <copyright>Copyright Easy Processing Company 2008 - 2019</copyright>
+    <tags>EWebFramework Framework</tags>
+    <dependencies>
+      <dependency id="FreeSpire.XLS" version="8.3.0" />
+      <dependency id="Newtonsoft.Json" version="11.0.2" />
+      <dependency id="MediaTypeMap" version="2.1.0" />
+      <dependency id="NPOI" version="2.3.0" />
+      <dependency id="RestSharp" version="106.5.4" />
+      <dependency id="SharpZipLib" version="0.86.0" />
+      <dependency id="Simple.ImageResizer" version="2.1.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="EWebFramework\EWebFramework\consoles\AppOff.cs" target="content\EWebFramework\consoles\AppOff.cs" />
+    <file src="EWebFramework\EWebFramework\consoles\AppOn.cs" target="content\EWebFramework\consoles\AppOn.cs" />
+    <file src="EWebFramework\EWebFramework\documents\Sample.cs" target="content\EWebFramework\documents\Sample.cs" />
+    <file src="EWebFramework\EWebFramework\scheduled_jobs\SampleJob.cs" target="content\EWebFramework\scheduled_jobs\SampleJob.cs" />
+    <file src="EWebFramework\EWebFrameworkArtisan\Samples\SampleConsole.cs" target="content\EWebFrameworkArtisan\Samples\SampleConsole.cs" />
+    <file src="EWebFramework\EWebFrameworkArtisan\Samples\SampleController.cs" target="content\EWebFrameworkArtisan\Samples\SampleController.cs" />
+    <file src="EWebFramework\EWebFrameworkArtisan\Samples\SampleControllerAPI.cs" target="content\EWebFrameworkArtisan\Samples\SampleControllerAPI.cs" />
+    <file src="EWebFramework\EWebFrameworkArtisan\Samples\SampleJob.cs" target="content\EWebFrameworkArtisan\Samples\SampleJob.cs" />
+    <file src="EWebFramework\EWebFrameworkArtisan\Samples\SampleScript.js" target="content\EWebFrameworkArtisan\Samples\SampleScript.js" />
+    <file src="EWebFramework\EWebFrameworkArtisan\Samples\SampleService.cs" target="content\EWebFrameworkArtisan\Samples\SampleService.cs" />
+    <file src="EWebFramework\EWebFrameworkArtisan\Samples\SampleView.html" target="content\EWebFrameworkArtisan\Samples\SampleView.html" />
+    <file src="EWebFramework\EWebFrameworkArtisan\CODERiT.Logger.v.3.5.dll" target="content\EWebFrameworkArtisan\CODERiT.Logger.v.3.5.dll" />
+    <file src="EWebFramework\EWebFrameworkArtisan\EPArtisan.exe" target="content\EWebFrameworkArtisan\EPArtisan.exe" />
+    <file src="EWebFramework\EWebFrameworkArtisan\EPRO.Library.dll" target="content\EWebFrameworkArtisan\EPRO.Library.dll" />
+    <file src="EWebFramework\EWebFrameworkArtisan\Newtonsoft.Json.dll" target="content\EWebFrameworkArtisan\Newtonsoft.Json.dll" />
+    <file src="EWebFramework\EWebFrameworkDBVersioning\CODERiT.Logger.v.3.5.dll" target="content\EWebFrameworkDBVersioning\CODERiT.Logger.v.3.5.dll" />
+    <file src="EWebFramework\EWebFrameworkDBVersioning\CODERiT.PopUps.v3.5.dll" target="content\EWebFrameworkDBVersioning\CODERiT.PopUps.v3.5.dll" />
+    <file src="EWebFramework\EWebFrameworkDBVersioning\DatabaseVersioning.exe" target="content\EWebFrameworkDBVersioning\DatabaseVersioning.exe" />
+    <file src="EWebFramework\EWebFrameworkDBVersioning\DB.dll" target="content\EWebFrameworkDBVersioning\DB.dll" />
+    <file src="EWebFramework\EWebFrameworkDBVersioning\DB.v4.MS_SQL.dll" target="content\EWebFrameworkDBVersioning\DB.v4.MS_SQL.dll" />
+    <file src="EWebFramework\EWebFrameworkDBVersioning\DB.v4.MS_SQL.Tools.dll" target="content\EWebFrameworkDBVersioning\DB.v4.MS_SQL.Tools.dll" />
+    <file src="EWebFramework\EWebFrameworkDBVersioning\EPRO.Library.v3.5.dll" target="content\EWebFrameworkDBVersioning\EPRO.Library.v3.5.dll" />
+    <file src="EWebFramework\EWebFrameworkDBVersioning\EPRO.Library.v4.Shell.dll" target="content\EWebFrameworkDBVersioning\EPRO.Library.v4.Shell.dll" />
+    <file src="EWebFramework\EWebFrameworkDBVersioning\EPRO.WaitAsyncMgr.dll" target="content\EWebFrameworkDBVersioning\EPRO.WaitAsyncMgr.dll" />
+    <file src="EWebFramework\EWebFrameworkSiteBackup\CODERiT.Logger.v.3.5.dll" target="content\EWebFrameworkSiteBackup\CODERiT.Logger.v.3.5.dll" />
+    <file src="EWebFramework\EWebFrameworkSiteBackup\CODERiT.PopUps.v3.5.dll" target="content\EWebFrameworkSiteBackup\CODERiT.PopUps.v3.5.dll" />
+    <file src="EWebFramework\EWebFrameworkSiteBackup\EPRO.Library.dll" target="content\EWebFrameworkSiteBackup\EPRO.Library.dll" />
+    <file src="EWebFramework\EWebFrameworkSiteBackup\EPRO.Library.v3.5.dll" target="content\EWebFrameworkSiteBackup\EPRO.Library.v3.5.dll" />
+    <file src="EWebFramework\EWebFrameworkSiteBackup\ESiteBackup.exe" target="content\EWebFrameworkSiteBackup\ESiteBackup.exe" />
+    <file src="EWebFramework\api\default.aspx" target="content\EWebFrameworkSamples\api\default.aspx" />
+    <file src="EWebFramework\api\default.aspx.cs" target="content\EWebFrameworkSamples\api\default.aspx.cs" />
+    <file src="EWebFramework\api\default.aspx.designer.cs" target="content\EWebFrameworkSamples\api\default.aspx.designer.cs" />
+    <file src="EWebFramework\assets\pages\css\EWebFramework.css" target="content\EWebFrameworkSamples\assets\pages\css\EWebFramework.css" />
+    <file src="EWebFramework\assets\pages\css\master.css" target="content\EWebFrameworkSamples\assets\pages\css\master.css" />
+    <file src="EWebFramework\assets\pages\scripts\errors\Error401.js" target="content\EWebFrameworkSamples\assets\pages\scripts\errors\Error401.js" />
+    <file src="EWebFramework\assets\pages\scripts\errors\Error404.js" target="content\EWebFrameworkSamples\assets\pages\scripts\errors\Error404.js" />
+    <file src="EWebFramework\assets\pages\scripts\errors\Error415.js" target="content\EWebFrameworkSamples\assets\pages\scripts\errors\Error415.js" />
+    <file src="EWebFramework\assets\pages\scripts\errors\Error417.js" target="content\EWebFrameworkSamples\assets\pages\scripts\errors\Error417.js" />
+    <file src="EWebFramework\assets\pages\scripts\errors\Error500.js" target="content\EWebFrameworkSamples\assets\pages\scripts\errors\Error500.js" />
+    <file src="EWebFramework\assets\pages\scripts\utilities\ClientTimeZoneInformer.js" target="content\EWebFrameworkSamples\assets\pages\scripts\utilities\ClientTimeZoneInformer.js" />
+    <file src="EWebFramework\assets\pages\scripts\utilities\ErrorHandlings.js" target="content\EWebFrameworkSamples\assets\pages\scripts\utilities\ErrorHandlings.js" />
+    <file src="EWebFramework\assets\pages\scripts\utilities\Toaster.js" target="content\EWebFrameworkSamples\assets\pages\scripts\utilities\Toaster.js" />
+    <file src="EWebFramework\assets\pages\scripts\utilities\UrlHelper.js" target="content\EWebFrameworkSamples\assets\pages\scripts\utilities\UrlHelper.js" />
+    <file src="EWebFramework\assets\pages\scripts\EWebFramework.js" target="content\EWebFrameworkSamples\assets\pages\scripts\EWebFramework.js" />
+    <file src="EWebFramework\assets\pages\scripts\Home.js" target="content\EWebFrameworkSamples\assets\pages\scripts\Home.js" />
+    <file src="EWebFramework\assets\pages\scripts\master.js" target="content\EWebFrameworkSamples\assets\pages\scripts\master.js" />
+    <file src="EWebFramework\assets\pages\scripts\Test.js" target="content\EWebFrameworkSamples\assets\pages\scripts\Test.js" />
+    <file src="EWebFramework\assets\plugins\angular-spicy-ibo\angular_spicy.js" target="content\EWebFrameworkSamples\assets\plugins\angular-spicy-ibo\angular_spicy.js" />
+    <file src="EWebFramework\assets\plugins\angular-spicy-ibo\Upload.js" target="content\EWebFrameworkSamples\assets\plugins\angular-spicy-ibo\Upload.js" />
+    <file src="EWebFramework\assets\plugins\angularjs\1.4.8\angular.js" target="content\EWebFrameworkSamples\assets\plugins\angularjs\1.4.8\angular.js" />
+    <file src="EWebFramework\assets\plugins\sweetalert\2.1.0\messages.js" target="content\EWebFrameworkSamples\assets\plugins\sweetalert\2.1.0\messages.js" />
+    <file src="EWebFramework\assets\plugins\sweetalert\2.1.0\sweetalert.js" target="content\EWebFrameworkSamples\assets\plugins\sweetalert\2.1.0\sweetalert.js" />
+    <file src="EWebFramework\assets\plugins\xhook@1.4.9\xhook.js" target="content\EWebFrameworkSamples\assets\plugins\xhook@1.4.9\xhook.js" />
+    <file src="EWebFramework\assets\Gruntfile.js" target="content\EWebFrameworkSamples\assets\Gruntfile.js" />
+    <file src="EWebFramework\assets\package.json" target="content\EWebFrameworkSamples\assets\package.json" />
+    <file src="EWebFramework\console\default.aspx" target="content\EWebFrameworkSamples\console\default.aspx" />
+    <file src="EWebFramework\console\default.aspx.cs" target="content\EWebFrameworkSamples\console\default.aspx.cs" />
+    <file src="EWebFramework\console\default.aspx.designer.cs" target="content\EWebFrameworkSamples\console\default.aspx.designer.cs" />
+    <file src="EWebFramework\EWebFramework\api\controllers\auth\Login.cs" target="content\EWebFrameworkSamples\EWebFramework\api\controllers\auth\Login.cs" />
+    <file src="EWebFramework\EWebFramework\api\controllers\auth\Logout.cs" target="content\EWebFrameworkSamples\EWebFramework\api\controllers\auth\Logout.cs" />
+    <file src="EWebFramework\EWebFramework\api\controllers\resources\persons\ProfilePictures.cs" target="content\EWebFrameworkSamples\EWebFramework\api\controllers\resources\persons\ProfilePictures.cs" />
+    <file src="EWebFramework\EWebFramework\api\controllers\Test.cs" target="content\EWebFrameworkSamples\EWebFramework\api\controllers\Test.cs" />
+    <file src="EWebFramework\EWebFramework\api\middlewares\AutoFixNonExpiredSession.cs" target="content\EWebFrameworkSamples\EWebFramework\api\middlewares\AutoFixNonExpiredSession.cs" />
+    <file src="EWebFramework\EWebFramework\api\middlewares\InsertOrUpdateSessionRequest.cs" target="content\EWebFrameworkSamples\EWebFramework\api\middlewares\InsertOrUpdateSessionRequest.cs" />
+    <file src="EWebFramework\EWebFramework\api\middlewares\InternalServerExceptionTracer.cs" target="content\EWebFrameworkSamples\EWebFramework\api\middlewares\InternalServerExceptionTracer.cs" />
+    <file src="EWebFramework\EWebFramework\api\services\auth\Login.cs" target="content\EWebFrameworkSamples\EWebFramework\api\services\auth\Login.cs" />
+    <file src="EWebFramework\EWebFramework\api\services\auth\Logout.cs" target="content\EWebFrameworkSamples\EWebFramework\api\services\auth\Logout.cs" />
+    <file src="EWebFramework\EWebFramework\api\services\resources\persons\ImportedStudents.cs" target="content\EWebFrameworkSamples\EWebFramework\api\services\resources\persons\ImportedStudents.cs" />
+    <file src="EWebFramework\EWebFramework\api\services\resources\persons\ProfilePictures.cs" target="content\EWebFrameworkSamples\EWebFramework\api\services\resources\persons\ProfilePictures.cs" />
+    <file src="EWebFramework\EWebFramework\api\services\ClientService.cs" target="content\EWebFrameworkSamples\EWebFramework\api\services\ClientService.cs" />
+    <file src="EWebFramework\EWebFramework\api\services\CredentialManagerImplementer.cs" target="content\EWebFrameworkSamples\EWebFramework\api\services\CredentialManagerImplementer.cs" />
+    <file src="EWebFramework\EWebFramework\api\services\SessionService.cs" target="content\EWebFrameworkSamples\EWebFramework\api\services\SessionService.cs" />
+    <file src="EWebFramework\EWebFramework\controllers\auth\Login.cs" target="content\EWebFrameworkSamples\EWebFramework\controllers\auth\Login.cs" />
+    <file src="EWebFramework\EWebFramework\controllers\auth\Logout.cs" target="content\EWebFrameworkSamples\EWebFramework\controllers\auth\Logout.cs" />
+    <file src="EWebFramework\EWebFramework\controllers\errors\Error401.cs" target="content\EWebFrameworkSamples\EWebFramework\controllers\errors\Error401.cs" />
+    <file src="EWebFramework\EWebFramework\controllers\errors\Error404.cs" target="content\EWebFrameworkSamples\EWebFramework\controllers\errors\Error404.cs" />
+    <file src="EWebFramework\EWebFramework\controllers\errors\Error417.cs" target="content\EWebFrameworkSamples\EWebFramework\controllers\errors\Error417.cs" />
+    <file src="EWebFramework\EWebFramework\controllers\errors\Error500.cs" target="content\EWebFrameworkSamples\EWebFramework\controllers\errors\Error500.cs" />
+    <file src="EWebFramework\EWebFramework\controllers\Home.cs" target="content\EWebFrameworkSamples\EWebFramework\controllers\Home.cs" />
+    <file src="EWebFramework\EWebFramework\controllers\Test.cs" target="content\EWebFrameworkSamples\EWebFramework\controllers\Test.cs" />
+    <file src="EWebFramework\EWebFramework\mailing\mailable\auth\ResetModePinCode.cs" target="content\EWebFrameworkSamples\EWebFramework\mailing\mailable\auth\ResetModePinCode.cs" />
+    <file src="EWebFramework\EWebFramework\response_handlers\CustomResponse.cs" target="content\EWebFrameworkSamples\EWebFramework\response_handlers\CustomResponse.cs" />
+    <file src="EWebFramework\EWebFramework\routes\API.cs" target="content\EWebFrameworkSamples\EWebFramework\routes\API.cs" />
+    <file src="EWebFramework\EWebFramework\routes\WEB.cs" target="content\EWebFrameworkSamples\EWebFramework\routes\WEB.cs" />
+    <file src="EWebFramework\EWebFramework\ENV.cs" target="content\EWebFrameworkSamples\EWebFramework\ENV.cs" />
+    <file src="EWebFramework\mails\samples\CashRequest.html" target="content\EWebFrameworkSamples\mails\samples\CashRequest.html" />
+    <file src="EWebFramework\mails\samples\ResetModePinCode.html" target="content\EWebFrameworkSamples\mails\samples\ResetModePinCode.html" />
+    <file src="EWebFramework\mails\samples\SampleMail.html" target="content\EWebFrameworkSamples\mails\samples\SampleMail.html" />
+    <file src="EWebFramework\views\auth\Login.html" target="content\EWebFrameworkSamples\views\auth\Login.html" />
+    <file src="EWebFramework\views\layouts\master.html" target="content\EWebFrameworkSamples\views\layouts\master.html" />
+    <file src="EWebFramework\views\system\MaintenanceMode.html" target="content\EWebFrameworkSamples\views\system\MaintenanceMode.html" />
+    <file src="EWebFramework\views\Home.html" target="content\EWebFrameworkSamples\views\Home.html" />
+    <file src="EWebFramework\default.aspx" target="content\EWebFrameworkSamples\default.aspx" />
+    <file src="EWebFramework\default.aspx.cs" target="content\EWebFrameworkSamples\default.aspx.cs" />
+    <file src="EWebFramework\default.aspx.designer.cs" target="content\EWebFrameworkSamples\default.aspx.designer.cs" />
+    <file src="EWebFramework\Global.asax" target="content\EWebFrameworkSamples\Global.asax" />
+    <file src="EWebFramework\Global.asax.cs" target="content\EWebFrameworkSamples\Global.asax.cs" />
+    <file src="EWebFramework\Web.config" target="content\EWebFrameworkSamples\Web.config" />
+    <file src="EWebFramework\.env.example" target="content\.env.example" />
+    <file src="EWebFramework\.gitignore" target="content\.gitignore" />
+    <file src="EWebFramework\ETerminal.bat" target="content\ETerminal.bat" />
+    <file src="EWebFramework\maintenance.mode" target="content\maintenance.mode" />
+    <file src="EWebFramework\bin\CODERiT.Logger.v.3.5.dll" target="lib\net461\CODERiT.Logger.v.3.5.dll" />
+    <file src="EWebFramework\bin\DB.dll" target="lib\net461\DB.dll" />
+    <file src="EWebFramework\bin\DB.v4.IIS.MSSQL.dll" target="lib\net461\DB.v4.IIS.MSSQL.dll" />
+    <file src="EWebFramework\bin\EPPlus.dll" target="lib\net461\EPPlus.dll" />
+    <file src="EWebFramework\bin\EPRO.Library.dll" target="lib\net461\EPRO.Library.dll" />
+    <file src="EWebFramework\bin\EPRO.Library.WebExtensions.dll" target="lib\net461\EPRO.Library.WebExtensions.dll" />
+    <file src="EWebFramework\bin\EWebFramework.Vendor.dll" target="lib\net461\EWebFramework.Vendor.dll" />
+    <file src="EWebFramework\bin\ExcelDataReader.DataSet.dll" target="lib\net461\ExcelDataReader.DataSet.dll" />
+    <file src="EWebFramework\bin\ExcelDataReader.dll" target="lib\net461\ExcelDataReader.dll" />
+    <file src="EWebFramework\bin\ExcelDataReaderWrapper.dll" target="lib\net461\ExcelDataReaderWrapper.dll" />
+  </files>
+</package>

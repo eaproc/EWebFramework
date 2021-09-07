@@ -1,0 +1,518 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+DB.v4.IIS.MSSQL
+</name>
+</assembly>
+<members>
+<member name="T:DB.v4.IIS.MSSQL.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:DB.v4.IIS.MSSQL.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:DB.v4.IIS.MSSQL.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="T:DB.v4.IIS.MSSQL.ConfigurableClient">
+ <summary>
+ Allows Remote Client to manage tables and Versioning with snapshots
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:DB.v4.IIS.MSSQL.ConfigurableClient.#ctor(System.String,System.Int32,System.String,System.String,System.String,System.Double,System.Boolean)">
+ <summary>
+ Initialize Class With Necessary Parameters. It tries to connect immediately on constructor. Allows Remote Client to manage tables and Versioning with snapshots
+ </summary>
+ <param name="sAddress">IP or Name of Host PC on Network full instance name. like db.ciu.edu or 192.163.334.222\sqlexpress2014</param>
+ <param name="sUserName"></param>
+ <param name="sPassword"></param>
+ <param name="TargetCurrentDatabaseVersion">The version this database should be in</param>
+ <remarks></remarks>
+</member>
+<member name="T:DB.v4.IIS.MSSQL.Client">
+ <summary>
+ Advances SQL Server Local To Network Opearations
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:DB.v4.IIS.MSSQL.Client.getConnectionString(System.String)">
+ <summary>
+ get connection string
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DB.v4.IIS.MSSQL.Client.#ctor(System.String,System.Int32,System.String,System.String,System.String)">
+ <summary>
+ Initialize Class With Necessary Parameters. It tries to connect immediately on constructor
+ </summary>
+ <param name="sAddress">IP or Name of Host PC on Network full instance name. like db.ciu.edu or 192.163.334.222\sqlexpress2014</param>
+ <param name="sUserName"></param>
+ <param name="sPassword"></param>
+ <remarks></remarks>
+</member>
+<member name="M:DB.v4.IIS.MSSQL.Client.getSQLConnection(System.String)">
+ <summary>
+ Using SQL Default Path 
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DB.v4.IIS.MSSQL.Client.getBase">
+ <summary>
+ Get my base instance
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="T:DB.v4.IIS.MSSQL.Server">
+ <summary>
+ Contains Basic Operations to perform when using MS SQL Server [2008] in your project as a Server/Standlone
+ </summary>
+ <remarks>I assume this is Local. On Local Connections</remarks>
+</member>
+<member name="F:DB.v4.IIS.MSSQL.Server.CurrentDBInUse">
+ <summary>
+ Actually When you initiate Local you dont need to pass any credential apart from the database
+ You wish to use
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:DB.v4.IIS.MSSQL.Server.SQLServerAddress">
+ <summary>
+ Server address or host name with address like WINHOST-PC\SQLEXPRESS
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="F:DB.v4.IIS.MSSQL.Server.DEFAULT_PORT">
+ <summary>
+ SQL Server Default Port Number
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:DB.v4.IIS.MSSQL.Server.#ctor(System.String,System.String)">
+ <summary>
+ Set Database to use
+ </summary>
+ <param name="useDatabase"></param>
+ <param name="pSQLServerFullAddress">Enter full instance name like pcName\SqlExpress2014</param>
+ <remarks></remarks>
+</member>
+<member name="M:DB.v4.IIS.MSSQL.Server.#ctor(System.String)">
+ <summary>
+ Set Database to use
+ </summary>
+ <param name="useDatabase">Database on MyPC\sqlexpress</param>
+ <remarks></remarks>
+</member>
+<member name="M:DB.v4.IIS.MSSQL.Server.Encode__Apostrophe(System.String)">
+ <summary>
+ Incase your database is using 'Date', you might need to encode it to \'Date\' if you are using encoding
+ </summary>
+ <param name="__str "></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DB.v4.IIS.MSSQL.Server.getSQLConnection">
+ <summary>
+ Using SQL Default Path and DB 
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DB.v4.IIS.MSSQL.Server.getSQLConnection(System.String)">
+ <summary>
+ Using SQL Default Path and DB 
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DB.v4.IIS.MSSQL.Server.dbExec(System.String,System.Data.SqlClient.SqlParameter[])">
+ <summary>
+ Execute SQL StoredProcedures ... Using Current Database
+ </summary>
+ <param name="SQLParameters"></param>
+ <remarks></remarks>
+</member>
+<member name="M:DB.v4.IIS.MSSQL.Server.dbExec(System.String)">
+ <summary>
+ Using current loaded database
+ </summary>
+ <param name="SQL"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DB.v4.IIS.MSSQL.Server.dbExec(System.String,System.String)">
+ <summary>
+ Specify database to use
+ </summary>
+ <param name="SQL"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DB.v4.IIS.MSSQL.Server.getRS(System.String)">
+ <summary>
+ Get RS using Specific DB. Throws Exception.
+ Returns DataSet or throws Exception
+ </summary>
+ <param name="SQL"></param>
+ <returns></returns>
+ <exception cref="T:System.Exception"></exception>
+ <remarks></remarks>
+</member>
+<member name="M:DB.v4.IIS.MSSQL.Server.getRS(System.String,System.String)">
+ <summary>
+ Get RS using Specific DB. Throws Exception.
+ Returns DataSet or throws Exception
+ </summary>
+ <param name="SQL"></param>
+ <returns></returns>
+ <exception cref="T:System.Exception"></exception>
+ <remarks></remarks>
+</member>
+<member name="M:DB.v4.IIS.MSSQL.Server.getRS(System.String,System.Data.SqlClient.SqlParameter[])">
+ <summary>
+ Get RS using default DB and Stored Procedures
+ </summary>
+ <param name="StoredProcedure "></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DB.v4.IIS.MSSQL.Server.PingDB">
+ <summary>
+ Test if DB is Ok. Always use master db
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:DB.v4.IIS.MSSQL.Server.CanConnect">
+ <summary>
+ Indicate if Connection will be successful using the current parameters
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DB.v4.IIS.MSSQL.Server.CanConnect(System.Boolean)">
+ <summary>
+ Indicate if Connection will be successful using the current parameters.
+ Silent Run
+ </summary>
+ <param name="Silent">dummy input</param>
+ <remarks></remarks>
+</member>
+<member name="M:DB.v4.IIS.MSSQL.Server.SaveThisImageOnTable(System.String,System.String,System.String,System.Int64,System.Drawing.Image)">
+ <summary>
+ Save Image On a Table Using a Unique ID
+ </summary>
+ <param name="TableName"></param>
+ <param name="ImageColumnName"></param>
+ <param name="ColumnIDName"></param>
+ <param name="ColumnID"></param>
+ <param name="ImageToSave"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DB.v4.IIS.MSSQL.Server.SaveThisImageOnTable(System.String,System.String,System.String,System.Int64,System.Drawing.Imaging.ImageFormat,System.Drawing.Image)">
+ <summary>
+ Save Image On a Table Using a Unique ID and a specified image format
+ </summary>
+ <param name="TableName"></param>
+ <param name="ImageColumnName"></param>
+ <param name="ColumnIDName"></param>
+ <param name="ColumnID"></param>
+ <param name="ImageFormatToUse">Incase your image does not have a format. Like image from graphics</param>
+ <param name="ImageToSave"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DB.v4.IIS.MSSQL.Server.FetchImageFromTable(System.String,System.String,System.String,System.Int64)">
+ <summary>
+ Fectch Image Value From Database
+ </summary>
+ <param name="TableName">The Table name we want to extract from</param>
+ <param name="ImageColumnName">Image Column Name</param>
+ <param name="ColumnIDName">A unique ID column Name [Must Contain Numeric]</param>
+ <param name="ColumnID">Unique Column ID Value</param>
+ <returns>Image or Nothing</returns>
+ <remarks></remarks>
+</member>
+<member name="M:DB.v4.IIS.MSSQL.Server.SaveVarBinaryOnTable(System.String,System.String,System.Int64,System.Byte[])">
+ <summary>
+ Save VarBinary On a Table Using a Unique ID [long]
+ </summary>
+ <param name="TableName">The table where to insert the file</param>
+ <param name="FileColumnName">The Column on Table for the file</param>
+ <param name="ColumnIDValue">The primary key id value</param>
+ <returns>boolean on success</returns>
+ <remarks></remarks>
+</member>
+<member name="M:DB.v4.IIS.MSSQL.Server.SaveThisFileOnTable(System.String,System.String,System.Int64,System.String,System.String)">
+ <summary>
+ Save File On a Table Using a Unique ID [long]
+ </summary>
+ <param name="TableName">The table where to insert the file</param>
+ <param name="FileColumnName">The Column on Table for the file</param>
+ <param name="ColumnIDName">The primary key name</param>
+ <param name="ColumnIDValue">The primary key id value</param>
+ <param name="FilePath">The path of the file to save to database</param>
+ <returns>boolean on success</returns>
+ <remarks></remarks>
+</member>
+<member name="M:DB.v4.IIS.MSSQL.Server.SaveThisFileOnTable(System.String,System.String,System.String,System.String,System.String)">
+ <summary>
+ Save File On a Table Using a Unique ID [long]
+ </summary>
+ <param name="TableName">The table where to insert the file</param>
+ <param name="FileColumnName">The Column on Table for the file</param>
+ <param name="ColumnIDName">The unique key name</param>
+ <param name="ColumnIDValue">The primary key id value</param>
+ <param name="FilePath">The path of the file to save to database</param>
+ <returns>boolean on success</returns>
+ <remarks></remarks>
+</member>
+<member name="M:DB.v4.IIS.MSSQL.Server.FetchFileFromTable(System.String,System.String,System.Int64,System.String)">
+ <summary>
+ Fectch Image Value From Database
+ </summary>
+ <param name="TableName">The Table name we want to extract from</param>
+ <param name="FileColumnName">Image Column Name</param>
+ <param name="ColumnIDName">A unique ID column Name [Must Contain Numeric]</param>
+ <param name="ColumnIDValue">Unique Column ID Value</param>
+ <returns>Image or Nothing</returns>
+ <remarks></remarks>
+</member>
+<member name="M:DB.v4.IIS.MSSQL.Server.FetchFileFromTable(System.String,System.String,System.String,System.String)">
+ <summary>
+ Fectch File Data Value From Database
+ </summary>
+ <param name="TableName">The Table name we want to extract from</param>
+ <param name="FileColumnName">Image Column Name</param>
+ <param name="ColumnIDName">A unique ID column Name [Must Contain String]</param>
+ <param name="ColumnIDValue">Unique Column ID Value</param>
+ <returns>File or Nothing</returns>
+ <remarks></remarks>
+</member>
+<member name="M:DB.v4.IIS.MSSQL.Server.FetchFileFromTable(System.String,System.String,System.String,System.Int64,System.String,System.String,System.Boolean)">
+ <summary>
+ Fetch file from database and returns filepath [Make sure you invoke with administrative rights to write to disk]
+ </summary>
+ <param name="TableName">The Table Name Containing the File</param>
+ <param name="FileColumnName">The Column Name Containing the File bytes</param>
+ <param name="ColumnIDName">A unique column on the table</param>
+ <param name="ColumnIDValue">The unique column value</param>
+ <param name="FolderPath" >The destination directory to store the extracted file</param>
+ <param name="suggestedFileName" >The suggested file name</param>
+ <param name="Overwrite" >Overwrite File if it already exist in the directory</param>
+ <returns>It returns the name of the file written if succeeded</returns>
+ <remarks></remarks>
+</member>
+<member name="M:DB.v4.IIS.MSSQL.Server.FetchFileFromTable(System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean)">
+ <summary>
+ Fetch file from database and returns filepath [Make sure you invoke with administrative rights to write to disk]
+ </summary>
+ <param name="TableName">The Table Name Containing the File</param>
+ <param name="FileColumnName">The Column Name Containing the File bytes</param>
+ <param name="ColumnIDName">A unique column on the table</param>
+ <param name="ColumnIDValue">The unique column value</param>
+ <param name="FolderPath" >The destination directory to store the extracted file</param>
+ <param name="suggestedFileName" >The suggested file name</param>
+ <param name="Overwrite" >Overwrite File if it already exist in the directory</param>
+ <returns>It returns the name of the file written if succeeded</returns>
+ <remarks></remarks>
+</member>
+<member name="M:DB.v4.IIS.MSSQL.Server.FillMyTables(System.Data.DataSet@)">
+ <summary>
+ Fill All Data For Tables in this Hard-Coded dataset
+ </summary>
+ <param name="MyDataSet"></param>
+ <remarks></remarks>
+</member>
+<member name="M:DB.v4.IIS.MSSQL.Server.FillMyTable(System.Data.DataTable@)">
+ <summary>
+ Fill All Data For Table
+ </summary>
+ <param name="OneTable"></param>
+ <remarks></remarks>
+</member>
+<member name="M:DB.v4.IIS.MSSQL.Server.FillMyTable(System.Data.DataTable@,System.String)">
+ <summary>
+ Fill All Data For Table
+ </summary>
+ <param name="OneTable"></param>
+ <param name="SQLWHERECondition__Or__FullSQL_Statement" >You can pass in a full sql state or only where condition</param>
+ <remarks></remarks>
+</member>
+<member name="M:DB.v4.IIS.MSSQL.Server.FillMyTable(System.String,System.Data.DataTable@)">
+ <summary>
+ Fill All Data For Table
+ </summary>
+ <param name="OneTable"></param>
+ <param name="SQL " >SQL For Table</param>
+ <remarks></remarks>
+</member>
+<member name="M:DB.v4.IIS.MSSQL.Server.FillMyTable(System.Data.DataTable@,System.String,System.Data.SqlClient.SqlParameter[])">
+ <summary>
+ Fill All Data For Table With Provided StoredProcedure
+ </summary>
+ <param name="OneTable"></param>
+ <remarks></remarks>
+</member>
+<member name="M:DB.v4.IIS.MSSQL.Server.ExecuteSQLFile(System.String,System.Boolean,System.Boolean,System.Text.Encoding)">
+ <summary>
+ Executes an SQL File containing SQL Statements. Uses System.Text.Encoding.Default - WINDOWS ANSII
+ </summary>
+ <param name="pSQLFileName">SQL File containing SQL Statements</param>
+ <param name="pTerminateOnError">If One Statement in the file yields error. The process will break if set to true</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DB.v4.IIS.MSSQL.Server.ExecuteSQLFile(System.String,System.Boolean,System.String,System.Boolean,System.Text.Encoding)">
+ <summary>
+ Executes an SQL File containing SQL Statements. Uses System.Text.Encoding.Default - WINDOWS ANSII
+ </summary>
+ <param name="pSQLFileName">SQL File containing SQL Statements</param>
+ <param name="pTerminateOnError">If One Statement in the file yields error. The process will break if set to true</param>
+ <param name="pStatementDelimiter">The delimiter use to identify the end of each sql statement. not case sensitive</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DB.v4.IIS.MSSQL.Server.ExecuteSQLFile(System.String,System.Boolean,System.String)">
+ <summary>
+ Executes an SQL File containing SQL Statements. Uses System.Text.Encoding.Default - WINDOWS ANSII
+ </summary>
+ <param name="SQLFileName">SQL File containing SQL Statements</param>
+ <param name="TerminateOnError">If One Statement in the file yields error. The process will break if set to true</param>
+ <param name="StatementDelimiter">The delimiter use to identify the end of each sql statement. not case sensitive</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DB.v4.IIS.MSSQL.Server.ExecuteSQLFile(System.String,System.Text.Encoding,System.Boolean,System.String,System.Boolean)">
+ <summary>
+ Executes an SQL File containing SQL Statements
+ </summary>
+ <param name="SQLFileName">SQL File containing SQL Statements</param>
+ <param name="TerminateOnError">If One Statement in the file yields error. The process will break if set to true</param>
+ <param name="StatementDelimiter">The delimiter use to identify the end of each sql statement. not case sensitive</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DB.v4.IIS.MSSQL.Server.PackageDateTimeForSavingOnSQL2008(System.String)">
+ <summary>
+ Package the DateTime Output in the correct saving Order.
+ Pack a formatted SQL Server save date into quoted string '{_dateValue}'
+ </summary>
+ <param name="_DateTime"></param>
+ <returns></returns>
+ <remarks>NB: If date should be empty it should be set to Null</remarks>
+</member>
+<member name="M:DB.v4.IIS.MSSQL.Server.IsTableCreatedOnDatabase(System.String,System.String)">
+ <summary>
+ Check If Table is Created on Current Database in Use. ISOLATION LEVEL: READ_COMMITTED
+ </summary>
+ <param name="pTableName"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DB.v4.IIS.MSSQL.Server.IsTableCreatedOnDatabase(System.String)">
+ <summary>
+ Check If Table is Created on Current Database in Use. ISOLATION LEVEL: READ_COMMITTED
+ </summary>
+ <param name="pTableName"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DB.v4.IIS.MSSQL.Server.IsSnapshotSetOnDatabase(System.String)">
+ <summary>
+ Check If Allow_Snapshot is set to ON on the indicated database name. It using current connect to perform the query
+ </summary>
+ <param name="pDatabase"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DB.v4.IIS.MSSQL.Server.IsSnapshotSetOnDatabase">
+ <summary>
+ Check If Allow_Snapshot is set to ON on the this current database name.
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DB.v4.IIS.MSSQL.Server.FetchDBVersion">
+ <summary>
+ Get the default database dbversion
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DB.v4.IIS.MSSQL.Server.UpdateDBVersion(System.Double)">
+ <summary>
+ Update the DB Version to the upgraded 
+ </summary>
+ <param name="_Version"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DB.v4.IIS.MSSQL.Server.createVersionTable_on_DB(System.String)">
+ <summary>
+ Inserts the DBInfo Table on Database
+ </summary>
+ <param name="DatabaseName"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DB.v4.IIS.MSSQL.Server.UpgradeDatabase(System.Double,System.Double)">
+ <summary>
+ Upgrade the database file to the suggested version. uses folder "{AppPath}\DBUpgrades\SQL_Upgrade_{No}.sql"
+ </summary>
+ <param name="pDBTarget_Version ">The Current DB Version you want it to be</param>
+ <param name="pCurrent_Loaded_DB_Version">The Version of the BackedUp DB to be upgraded to current</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DB.v4.IIS.MSSQL.Server.UpgradeDatabase(System.Double,System.Double,System.Boolean)">
+ <summary>
+ Upgrade the database file to the suggested version. uses folder "{AppPath}\DBUpgrades\SQL_Upgrade_{No}.sql"
+ </summary>
+ <param name="pDBTarget_Version ">The Current DB Version you want it to be</param>
+ <param name="Current_Loaded_DB_Version">The Version of the BackedUp DB to be upgraded to current</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DB.v4.IIS.MSSQL.Server.getClass">
+ <summary>
+ Return the instance of this class
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DB.v4.IIS.MSSQL.Interfaces.IDBTableDefinitionPlugIn.getForeignKeys">
+ <summary>
+ Return the names of tables this view depend on
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DB.v4.IIS.MSSQL.Interfaces.IDBViewDefinitionPlugIn.getReferencedTableNames">
+ <summary>
+ Return the names of tables this view depend on
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="T:DB.v4.IIS.MSSQL.Interfaces.ISQLServerDBPointer">
+ <summary>
+ Mainly for pointing to a Specific Server Instance
+ </summary>
+ <remarks></remarks>
+</member>
+</members>
+</doc>
