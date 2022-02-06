@@ -499,7 +499,7 @@ namespace EWebFramework.Vendor.api.services
         /// <returns></returns>
         public byte[] GetResizedImage(byte[] Contents, uint pResizeWidth = 0, uint pResizeHeight = 0)
         {
-            using (TemporaryFile tf = new TemporaryFile(".jpg"))
+            using (TemporaryFile tf = new TemporaryFile(ExtWithDot: ".jpg", appendRandom: true))
             {
 
                 File.WriteAllBytes(tf.FileFullPath, Contents);
