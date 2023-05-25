@@ -144,21 +144,6 @@ namespace EWebFramework.Vendor.response_handlers
 
 
 
-
-
-        public static void OutputFileAsStream(this HttpResponse response, String pFilePath, String MimeType, bool isAttachment)
-        {
-            response.Clear();
-            response.ContentType = MimeType;
-            response.AppendHeader("Content-Disposition", String.Format(isAttachment? "attachment": "inline" + "; filename=\"{0}\"", EIO.getFileName(pFilePath)));
-
-            using (MemoryStream ms = new MemoryStream(System.IO.File.ReadAllBytes(pFilePath)))
-            {
-                ms.WriteTo(response.OutputStream);
-            }
-        }
-
-
         public static void OutputFileAsStream(this HttpResponse response, String pFilePath)
         {
             String MimeType = MimeTypes.MimeTypeMap.GetMimeType(EIO.GetFileExtension(pFilePath));
@@ -172,31 +157,29 @@ namespace EWebFramework.Vendor.response_handlers
             OutputFileAsStream(response: response, pFilePath: pFilePath, MimeType: MimeType, isAttachment: isAttachment);
         }
 
-
-
-
-        public static void OutputFileAsStream(this HttpResponse response, String pFilePath, String MimeType, String pCustomDownloadName, bool isAttachment)
+        public static void OutputFileAsStream(this HttpResponse response, String pFilePath, String MimeType, bool isAttachment)
         {
-            response.Clear();
-            response.ContentType = MimeType;
-
-            if (pCustomDownloadName == null) pCustomDownloadName = EIO.getFileName(pFilePath);
-
-            response.AppendHeader("Content-Disposition", String.Format("attachment; filename=\"{0}\"", pCustomDownloadName));
-
-
-            using (MemoryStream ms = new MemoryStream(System.IO.File.ReadAllBytes(pFilePath)))
-            {
-                ms.WriteTo(response.OutputStream);
-            }
+            OutputFileAsStream(response: response, pFilePath: pFilePath, MimeType: MimeType, pCustomDownloadName: EIO.getFileName(pFilePath), isAttachment: isAttachment);
         }
-        
 
         public static void OutputFileAsStream(this HttpResponse response, String pFilePath, String MimeType, String pCustomDownloadName)
         {
             OutputFileAsStream(response: response, pFilePath: pFilePath, MimeType: MimeType, pCustomDownloadName: pCustomDownloadName, isAttachment: true);
         }
 
+        public static void OutputFileAsStream(this HttpResponse response, String pFilePath, String MimeType, String pCustomDownloadName, bool isAttachment)
+        {
+            if (pCustomDownloadName == null || pCustomDownloadName == string.Empty) pCustomDownloadName = EIO.getFileName(pFilePath);
+
+            response.Clear();
+            response.ContentType = MimeType;
+            response.AppendHeader("Content-Disposition", string.Format((isAttachment ? "attachment" : "inline") + "; filename=\"{0}\"", pCustomDownloadName ));
+
+            using (MemoryStream ms = new MemoryStream(System.IO.File.ReadAllBytes(pFilePath)))
+            {
+                ms.WriteTo(response.OutputStream);
+            }
+        }
 
         private static readonly Dictionary<char, char> AndroidAllowedChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ._-+,@£$€!½§~'=()[]{}0123456789".ToDictionary(c => c);
 
